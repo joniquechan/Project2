@@ -3,6 +3,7 @@
  */
 
 package com.mycompany.project2algo;
+import java.util.*;
 
 /**
  *
@@ -11,6 +12,26 @@ package com.mycompany.project2algo;
 public class Project2Algo {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        // get input
+        Scanner sc = new Scanner(System.in);
+        
+        // denominations
+        int n = sc.nextInt();
+        int[] coinDenoms = new int[n];
+        for (int i = 0; i < n; i++) {
+            coinDenoms[i] = sc.nextInt();
+        }
+
+        // problems
+        int k = sc.nextInt();
+        int[] problems = new int[k];
+        for (int i = 0; i < k; i ++) {
+            problems[i] = sc.nextInt();
+        }
+        
+        sc.close();
+
+        // 
     }
 }
