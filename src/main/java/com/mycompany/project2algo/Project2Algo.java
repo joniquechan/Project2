@@ -13,6 +13,7 @@ public class Project2Algo {
 
     public static void main(String[] args) {
 
+        System.out.println("input:");
         // get input
         Scanner sc = new Scanner(System.in);
         
@@ -29,9 +30,19 @@ public class Project2Algo {
         for (int i = 0; i < k; i ++) {
             problems[i] = sc.nextInt();
         }
-        
+
+        // check if parse is correct or nah
+        System.out.println(Arrays.toString(coinDenoms));
+        System.out.println(Arrays.toString(problems));
         sc.close();
 
-        // 
+        // print results
+        // for loop to call
+        /* for (int i = 0; i < problems.length; i++) {
+            makeChange.BottomUp(problems[i], coinDenoms);
+            System.out.println(problems[i] + " cents = " + CoinPurse.denom +":" + CoinPurse.lastCoin);
+        }
+        */
+        
     }
 }
