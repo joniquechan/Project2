@@ -12,7 +12,7 @@ import java.util.*;
 public class Project2Algo {
 
     public static void main(String[] args) {
-
+        /*
         System.out.println("input:");
         // get input
         Scanner sc = new Scanner(System.in);
@@ -35,14 +35,16 @@ public class Project2Algo {
         System.out.println(Arrays.toString(coinDenoms));
         System.out.println(Arrays.toString(problems));
         sc.close();
-
-        // print results
-        // for loop to call
-        /* for (int i = 0; i < problems.length; i++) {
-            makeChange.BottomUp(problems[i], coinDenoms);
-            System.out.println(problems[i] + " cents = " + CoinPurse.denom +":" + CoinPurse.lastCoin);
-        }
         */
-        
+
+        // print results (function?)
+        int amt = 11;
+        int[] coi = {1, 7};
+        makeChange.BottomUp(amt, coi);
+
+        for (int i = 0; i < CoinPurse.denom.length; i++) {
+            System.out.println("coins used: " + CoinPurse.denom[i]);
+        }
+
     }
 }
