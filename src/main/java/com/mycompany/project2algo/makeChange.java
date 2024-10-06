@@ -7,35 +7,43 @@ import java.util.Arrays;
 public class makeChange {
     public static void BottomUp(int amount, int[]coins) {
         // make array to store min number of coins, dp[0]...dp[amount]
-        int[] dp = new int[amount + 1];
-        // track which coin was last used to make the amount
-        int[] lastCoinUsed = new int[amount + 1];
+        CoinPurse[] dp = new CoinPurse[amount + 1];
 
-        Arrays.fill(dp, Integer.MAX_VALUE);
+        for(int i = 0; i <= amount; i++){
+            dp[i] = new CoinPurse(coins.length);
+        }
         
         // base case
-        dp[0] = 0;
+        dp[0].setTotalCoins(0);
         // check if coin can be used to make curr amount starting from 1
+        int bestCoin = 0;
+        int curr;
+        int prev;
         for (int i = 1; i <= amount; i++) {
+            //check all coins
             for (int j = 0; j < coins.length; j++) {
-                // check if non-negative and no valid solution yet
-                if (coins[j] <= i && dp[i - coins[j]] != Integer.MAX_VALUE) {
-                    if (dp[i] > dp[i - coins[j]] + 1) {
-                        dp[i] = dp[i -coins[j]] + 1;
-                        lastCoinUsed[i] = coins[j];
+                // check if non-negative
+                if (coins[j] <= i) {
+                    curr = dp[i].getTotalCoins();
+                    prev = dp[i - coins[j]].getTotalCoins();
+                    if (curr > prev + 1) {
+                        dp[i].setTotalCoins(prev + 1);
+                        bestCoin = j;
                     }
                 }
             }
+            dp[i].setCoins(dp[i - coins[bestCoin]].getCoins());
+            dp[i].addCoin(bestCoin);
         }
 
         // test for now
-        System.out.print("coins used: ");
-        int currentAmount = amount;
-        while (currentAmount > 0) {
-            int coin = lastCoinUsed[currentAmount];
-            System.out.print(coin + " ");
-            currentAmount -= coin;
-        } 
+        int[] result = dp[amount].getCoins();
+        System.out.print(amount + " cents = ");
+        for(int i = coins.length - 1; i >= 0; i--){
+            if(result[i] != 0){
+                System.out.print(coins[i] + ":" + result[i] + " ");
+            }
+        }
     }
 
     private static int Recursive(int amount, int[] coins, int[] cache) {

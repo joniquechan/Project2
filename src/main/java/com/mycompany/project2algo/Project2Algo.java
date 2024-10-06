@@ -40,8 +40,8 @@ public class Project2Algo {
         
         */
         // print results <- testing for now
-        int amt = 11;
-        int[] coi = {1, 7};
+        int amt = 100000;
+        int[] coi = {1, 7, 17, 23, 37, 52};
         makeChange.BottomUp(amt, coi);
 
         /* for (int i = 0; i < CoinPurse.denom.length; i++) {
