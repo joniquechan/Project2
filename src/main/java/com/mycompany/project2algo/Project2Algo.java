@@ -42,9 +42,12 @@ public class Project2Algo {
         int[] coi = {1, 7};
         makeChange.BottomUp(amt, coi);
 
-        for (int i = 0; i < CoinPurse.denom.length; i++) {
+        /*for (int i = 0; i < CoinPurse.denom.length; i++) {
             System.out.println("coins used: " + CoinPurse.denom[i]);
         }
+         */
+
+        System.out.println("total coins: " + CoinPurse.totalCoins);
 
     }
 }

@@ -26,12 +26,13 @@ public class makeChange {
             }
         }
 
-        // fix thiss
+        /*
         for (int i = 0; i < lastCoinUsed.length; i++) {
             if (lastCoinUsed[i] == 1) {
                 CoinPurse.denom[i]++;
             }
         }
+            */
         
     }
 
