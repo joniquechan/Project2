@@ -11,7 +11,9 @@ import java.util.*;
  */
 public class Project2Algo {
 
+    // TODO: create print function
     public static void main(String[] args) {
+        
         /*
         System.out.println("input:");
         // get input
@@ -35,19 +37,17 @@ public class Project2Algo {
         System.out.println(Arrays.toString(coinDenoms));
         System.out.println(Arrays.toString(problems));
         sc.close();
+        
         */
-
-        // print results (function?)
+        // print results <- testing for now
         int amt = 11;
         int[] coi = {1, 7};
         makeChange.BottomUp(amt, coi);
 
-        /*for (int i = 0; i < CoinPurse.denom.length; i++) {
+        /* for (int i = 0; i < CoinPurse.denom.length; i++) {
             System.out.println("coins used: " + CoinPurse.denom[i]);
         }
-         */
-
-        System.out.println("total coins: " + CoinPurse.totalCoins);
-
+        */
+        
     }
 }
