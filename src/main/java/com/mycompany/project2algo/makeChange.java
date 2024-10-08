@@ -15,6 +15,7 @@ package com.mycompany.project2algo;
 
 public class makeChange {
 
+    // print function
     private static void printResults(int[] result, int amount, int[] coins) {
         System.out.print(amount + " cents =");
         for (int i = coins.length - 1; i >= 0; i--){
@@ -34,10 +35,10 @@ public class makeChange {
         
         // base case
         dp[0].setTotalCoins(0);
-        // check if coin can be used to make curr amount starting from 1
         int bestCoin = 0;
         int curr;
         int prev;
+        // check if coin can be used to make curr amount starting from 1
         for (int i = 1; i <= amount; i++) {
             //check all coins
             for (int j = 0; j < coins.length; j++) {
@@ -61,6 +62,7 @@ public class makeChange {
     // overloaded func
     public static void Recursive(int amount, int[] coins, boolean memo) {
         CoinPurse resultCoinPurse;
+
         // recursive with memoization
         if (memo == true) {
             // cache array
@@ -68,7 +70,7 @@ public class makeChange {
             resultCoinPurse = Recursive(amount, coins, cache);
         } else {
             // recursive without memoization
-        resultCoinPurse = RecursiveNonMemo(amount, coins);
+            resultCoinPurse = RecursiveNonMemo(amount, coins);
         }
     
         // print results
@@ -86,7 +88,7 @@ public class makeChange {
             return null;
         }
     
-        // check if problem has been solved alr
+        // check if problem has been solved
         if (cache[amount] != null) {
             return cache[amount];
         }
