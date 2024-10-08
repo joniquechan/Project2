@@ -6,17 +6,23 @@ package com.mycompany.project2algo;
 import java.util.*;
 
 /**
+ * This class is the main file.
  *
- * @author User
+ * @author Roni Ebenezer, Jonique Chan
+ * @version 1.0
+ * File: Project2Algo.java
+ * Created: Oct 2024
+ * ©Copyright Cedarville University, its Computer Science faculty, 
+ * and the authors. All rights reserved.
+ *
+ * Description: This class is the main file that reads the input in and initializes the problems and corresponding solutions. 
  */
+
 public class Project2Algo {
 
-    // TODO: create print function
     public static void main(String[] args) {
         
-        /*
         System.out.println("input:");
-        // get input
         Scanner sc = new Scanner(System.in);
         
         // denominations
@@ -33,20 +39,25 @@ public class Project2Algo {
             problems[i] = sc.nextInt();
         }
 
-        // check if parse is correct or nah
-        System.out.println(Arrays.toString(coinDenoms));
-        System.out.println(Arrays.toString(problems));
         sc.close();
         
-        */
-        // print results <- testing for now
-        int amt = 100000;
-        int[] coi = {1, 7, 17, 23, 37, 52};
-        makeChange.BottomUp(amt, coi);
-
-        /* for (int i = 0; i < CoinPurse.denom.length; i++) {
-            System.out.println("coins used: " + CoinPurse.denom[i]);
+        // print results
+        for (int i = 0; i < k; i++) {
+            makeChange.BottomUp(problems[i], coinDenoms);
+            System.out.println("\n");
         }
+
+        // testings
+        /* 
+        int amt = 11;
+        int[] coi = {1, 2, 5};
+        System.out.println("Bottom Up: " );
+        makeChange.BottomUp(amt, coi);
+        System.out.println("\nRecursive with Memoization: ");
+        // true = memo, false = no memo
+        makeChange.Recursive(amt, coi, true);
+        System.out.println("\nRecursive without Memoization: ");
+        makeChange.Recursive(amt, coi, false);
         */
         
     }

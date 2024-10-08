@@ -2,6 +2,20 @@ package com.mycompany.project2algo;
 
 import java.util.Arrays;
 
+/**
+ * This class contains the CoinPurse object.
+ *
+ * @author Roni Ebenezer, Jonique Chan
+ * @version 1.0
+ * File: CoinPurse.java
+ * Created: Oct 2024
+ * ©Copyright Cedarville University, its Computer Science faculty, 
+ * and the authors. All rights reserved.
+ *
+ * Description: This class contains a constructor that creates an array of coins with the value 0 and initializes the total amount of coins to a large value.
+ * It also contains a helper function that adds coins, two setters, and two getters. 
+ */
+
 public class CoinPurse {
     // coins needed
     private int totalCoins;;
