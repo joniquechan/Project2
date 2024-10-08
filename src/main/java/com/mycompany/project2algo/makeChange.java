@@ -58,6 +58,25 @@ public class makeChange {
         printResults(result, amount, coins);
     }
 
+        // overloaded func
+        public static void Recursive(int amount, int[] coins, boolean memo) {
+            CoinPurse resultCoinPurse;
+    
+            // recursive with memoization
+            if (memo == true) {
+                // cache array
+                CoinPurse[] cache = new CoinPurse[amount + 1];
+                resultCoinPurse = Recursive(amount, coins, cache);
+            }
+    
+            // recursive without memoization
+            resultCoinPurse = RecursiveNonMemo(amount, coins);
+    
+            // print results
+            int[] result = resultCoinPurse.getCoins();
+            printResults(result, amount, coins);
+        }
+
     private static CoinPurse Recursive(int amount, int[] coins, CoinPurse[] cache) {
         // base case
         if (amount == 0) {
@@ -96,25 +115,6 @@ public class makeChange {
 
         cache[amount] = bestCoinPurse;
         return bestCoinPurse;
-    }
-
-    // overloaded func
-    public static void Recursive(int amount, int[] coins, boolean memo) {
-        CoinPurse resultCoinPurse;
-
-        // recursive with memoization
-        if (memo == true) {
-            // cache array
-            CoinPurse[] cache = new CoinPurse[amount + 1];
-            resultCoinPurse = Recursive(amount, coins, cache);
-        }
-
-        // recursive without memoization
-        resultCoinPurse = RecursiveNonMemo(amount, coins);
-
-        // print results
-        int[] result = resultCoinPurse.getCoins();
-        printResults(result, amount, coins);
     }
 
     public static CoinPurse RecursiveNonMemo(int amount, int[] coins) {

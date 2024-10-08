@@ -44,21 +44,7 @@ public class Project2Algo {
         // print results
         for (int i = 0; i < k; i++) {
             makeChange.BottomUp(problems[i], coinDenoms);
-            System.out.println("\n");
+            System.out.print("\n");
         }
-
-        // testings
-        /* 
-        int amt = 11;
-        int[] coi = {1, 2, 5};
-        System.out.println("Bottom Up: " );
-        makeChange.BottomUp(amt, coi);
-        System.out.println("\nRecursive with Memoization: ");
-        // true = memo, false = no memo
-        makeChange.Recursive(amt, coi, true);
-        System.out.println("\nRecursive without Memoization: ");
-        makeChange.Recursive(amt, coi, false);
-        */
-        
     }
 }
