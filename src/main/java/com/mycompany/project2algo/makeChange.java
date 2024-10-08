@@ -15,6 +15,15 @@ package com.mycompany.project2algo;
 
 public class makeChange {
 
+    private static void printResults(int[] result, int amount, int[] coins) {
+        System.out.print(amount + " cents =");
+        for (int i = coins.length - 1; i >= 0; i--){
+            if(result[i] != 0){
+                System.out.print(" " + coins[i] + ":" + result[i]);
+            }
+        }
+    }
+
     public static void BottomUp(int amount, int[]coins) {
         // make array to store min number of coins, dp[0]...dp[amount]
         CoinPurse[] dp = new CoinPurse[amount + 1];
@@ -45,15 +54,8 @@ public class makeChange {
             dp[i].setCoins(dp[i - coins[bestCoin]].getCoins());
             dp[i].addCoin(bestCoin);
         }
-
-        // print results
         int[] result = dp[amount].getCoins();
-        System.out.print(amount + " cents = ");
-        for(int i = coins.length - 1; i >= 0; i--){
-            if(result[i] != 0){
-                System.out.print(coins[i] + ":" + result[i] + " ");
-            }
-        }
+        printResults(result, amount, coins);
     }
 
     private static CoinPurse Recursive(int amount, int[] coins, CoinPurse[] cache) {
@@ -93,7 +95,6 @@ public class makeChange {
         }
 
         cache[amount] = bestCoinPurse;
-
         return bestCoinPurse;
     }
 
@@ -113,12 +114,7 @@ public class makeChange {
 
         // print results
         int[] result = resultCoinPurse.getCoins();
-        System.out.print(amount + " cents = ");
-        for (int i = coins.length - 1; i >= 0; i--) {
-            if (result[i] != 0) {
-                System.out.print(coins[i] + ":" + result[i] + " ");
-            }
-        }
+        printResults(result, amount, coins);
     }
 
     public static CoinPurse RecursiveNonMemo(int amount, int[] coins) {
@@ -153,6 +149,5 @@ public class makeChange {
         }
 
         return bestCoinPurse;
-
     }
 }
