@@ -22,7 +22,6 @@ public class Project2Algo {
 
     public static void main(String[] args) {
         
-        System.out.println("input:");
         Scanner sc = new Scanner(System.in);
         
         // denominations
@@ -47,5 +46,7 @@ public class Project2Algo {
             makeChange.Recursive(problems[i], coinDenoms, false);
             System.out.print("\n");
         }
+
+        Graph g = new Graph();
     }
 }

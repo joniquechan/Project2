@@ -3,7 +3,7 @@ package com.mycompany.project2algo;
 import java.util.Arrays;
 
 /**
- * This class contains the CoinPurse object.
+ * This class contains the CoinPurse object that represents the optimal solution to making change for an amount.
  *
  * @author Roni Ebenezer, Jonique Chan
  * @version 1.0
@@ -17,34 +17,40 @@ import java.util.Arrays;
  */
 
 public class CoinPurse {
-    // coins needed
-    private int totalCoins;;
-    private int[] coins;
+    // coins needed to make target amount
+    private int totalCoins;
+    // array to keep count of coin denomination
+    private int[] coinTracker;
     
+    // constructor that initializes the coinTracker array to 0 and total coins to a large value
     public CoinPurse(int numCoins) {
-        coins = new int[numCoins];
-        Arrays.fill(coins, 0);
+        coinTracker = new int[numCoins];
+        Arrays.fill(coinTracker, 0);
         totalCoins = Integer.MAX_VALUE;
     }
 
-    //adds coin to the index
+    // method to adds coin to the index of the coinTracker
     public void addCoin(int index){
-        coins[index] = coins[index] + 1;
+        coinTracker[index] = coinTracker[index] + 1;
     }
 
+    // method to set total number of coins needed to make the target amount
     public void setTotalCoins(int total){
         totalCoins = total;
     }
 
+    // method to return total number of coins used currently
     public int getTotalCoins(){
         return totalCoins;
     }
 
+    // method to return coinTracker array
     public int[] getCoins(){
-        return coins;
+        return coinTracker;
     }
 
+    // method to set coinTracker by copying contents of an array
     public void setCoins(int[] c){
-        coins = c.clone();
+        coinTracker = c.clone();
     }
 }

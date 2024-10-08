@@ -10,7 +10,8 @@ package com.mycompany.project2algo;
  * ©Copyright Cedarville University, its Computer Science faculty, 
  * and the authors. All rights reserved.
  *
- * Description: 
+ * Description: This class contains a public function BottomUp that uses the bottom-up algorithm to solve the problem as well as an overloaded recursive function that calls
+ * either RecursiveNonMemo or Recursive (with memo). Both public functions BottomUp and Recursive uses the private function printResults to print the solution for the problems.
  */
 
 public class makeChange {
@@ -78,12 +79,13 @@ public class makeChange {
         printResults(result, amount, coins);
     }
 
+    // recursive with memoization
     private static CoinPurse Recursive(int amount, int[] coins, CoinPurse[] cache) {
         // base case
         if (amount == 0) {
             return new CoinPurse(coins.length);
         }
-        // if lesser = impossible
+        // if lesser, a solution is impossible
         if (amount < 0) {
             return null;
         }
@@ -99,14 +101,16 @@ public class makeChange {
         for (int i = 0; i < coins.length; i++) {
             if (amount >= coins[i]) {
                 int newAmount = amount - coins[i];
-                // find bestTotal for remaining amounts
+                // recursively solve sub problems
                 CoinPurse subCoin = Recursive(newAmount, coins, cache);
-                // inc total number of coins needed to make curr amount
+                // if theres a valid solution which is lesser than the current best
                 if (subCoin != null && subCoin.getTotalCoins() + 1 < bestTotal) {
+                    // update bestTotal
                     bestTotal = subCoin.getTotalCoins() + 1;
                     // clone coin purse
                     bestCoinPurse = new CoinPurse(coins.length);
                     bestCoinPurse.setCoins(subCoin.getCoins());
+                    // update coin purse
                     bestCoinPurse.addCoin(i);
                     bestCoinPurse.setTotalCoins(bestTotal);
                 }
@@ -117,7 +121,8 @@ public class makeChange {
         return bestCoinPurse;
     }
 
-    public static CoinPurse RecursiveNonMemo(int amount, int[] coins) {
+    // recursive without memoization
+    private static CoinPurse RecursiveNonMemo(int amount, int[] coins) {
         
         // base case
         if (amount == 0) {
@@ -135,13 +140,16 @@ public class makeChange {
         for (int i = 0; i < coins.length; i++) {
             if (amount >= coins[i]) {
                 int newAmount = amount - coins[i];
-                // find bestTotal for remaining amounts
+                // recursively solve sub problems
                 CoinPurse subCoin = RecursiveNonMemo(newAmount, coins);
-                // inc total number of coins needed to make curr amount
+                // if theres a valid solution which is lesser than the current best
                 if (subCoin != null && subCoin.getTotalCoins() + 1 < bestTotal) {
+                    // update best total
                     bestTotal = subCoin.getTotalCoins() + 1;
+                    // clonse coin purse
                     bestCoinPurse = new CoinPurse(coins.length);
                     bestCoinPurse.setCoins(subCoin.getCoins());
+                    // update coin purse
                     bestCoinPurse.addCoin(i);
                     bestCoinPurse.setTotalCoins(bestTotal);
                 }
