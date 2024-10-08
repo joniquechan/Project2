@@ -42,8 +42,9 @@ public class Project2Algo {
         sc.close();
         
         // print results
+        // true for memo
         for (int i = 0; i < k; i++) {
-            makeChange.BottomUp(problems[i], coinDenoms);
+            makeChange.Recursive(problems[i], coinDenoms, false);
             System.out.print("\n");
         }
     }
