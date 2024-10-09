@@ -3,7 +3,8 @@ package com.mycompany.project2algo;
 import java.util.Arrays;
 
 /**
- * This class contains the CoinPurse object that represents the optimal solution to making change for an amount.
+ * This class contains the CoinPurse object that contains the total coins 
+ * and count of each coin denomination used for each amount.
  *
  * @author Roni Ebenezer, Jonique Chan
  * @version 1.0
@@ -12,10 +13,10 @@ import java.util.Arrays;
  * ©Copyright Cedarville University, its Computer Science faculty, 
  * and the authors. All rights reserved.
  *
- * Description: This class contains a constructor that creates an array of coins with the value 0 and initializes the total amount of coins to a large value.
+ * Description: This class contains a constructor that creates an array of 
+ * coins with the value 0 and initializes the total amount of coins to a large value.
  * It also contains a helper function that adds coins, two setters, and two getters. 
  */
-
 public class CoinPurse {
     // coins needed to make target amount
     private int totalCoins;

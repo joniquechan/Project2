@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.project2algo;
 import java.util.*;
 
@@ -12,14 +8,14 @@ import java.util.*;
  * @version 1.0
  * File: Project2Algo.java
  * Created: Oct 2024
- * ©Copyright Cedarville University, its Computer Science faculty, 
- * and the authors. All rights reserved.
+ * ©Copyright Cedarville University, its Computer Science faculty, and the authors. 
+ * All rights reserved.
  *
- * Description: This class is the main file that reads the input in and initializes the problems and corresponding solutions. 
+ * Description: This class is the main file that reads the input in and initializes 
+ * the problems and corresponding solutions. 
  */
 
 public class Project2Algo {
-
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);

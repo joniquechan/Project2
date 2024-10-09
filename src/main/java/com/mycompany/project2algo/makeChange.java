@@ -1,19 +1,22 @@
 package com.mycompany.project2algo;
 
 /**
- * This class contains the algorithms for BottomUp, Recursive with Memoization and Recursive without Memoization.
+ * This class contains the algorithms for BottomUp, Recursive with Memoization 
+ * and Recursive without Memoization.
  *
  * @author Roni Ebenezer, Jonique Chan
  * @version 1.0
  * File: makeChange.java
  * Created: Oct 2024
- * ©Copyright Cedarville University, its Computer Science faculty, 
- * and the authors. All rights reserved.
+ * ©Copyright Cedarville University, its Computer Science faculty, and the authors. 
+ * All rights reserved.
  *
- * Description: This class contains a public function BottomUp that uses the bottom-up algorithm to solve the problem as well as an overloaded recursive function that calls
- * either RecursiveNonMemo or Recursive (with memo). Both public functions BottomUp and Recursive uses the private function printResults to print the solution for the problems.
+ * Description: This class contains a public function BottomUp that uses the 
+ * bottom-up algorithm to solve the problem as well as an overloaded recursive 
+ * function that calls either RecursiveNonMemo or Recursive (with memo). Both 
+ * public functions BottomUp and Recursive uses the private function printResults 
+ * to print the solution for the problems.
  */
-
 public class makeChange {
 
     // print function
